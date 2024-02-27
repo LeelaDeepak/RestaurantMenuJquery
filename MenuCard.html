@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Menu Card</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <section>
+      <h2 class="menuHead">Restaurant Menu Card</h2>
+      <main class="categories">
+        <div class="eachcategory" onclick="showbreakfast()">
+          <img src="assets/breakfast.webp" alt="breakfast" height="100" />
+          <h4>Breakfast</h4>
+        </div>
+        <div class="eachcategory" onclick="showlunch()">
+          <img src="assets/lunch.png" alt="lunch" height="100" />
+          <h4>Lunch</h4>
+        </div>
+        <div class="eachcategory" onclick="showsnacks()">
+          <img src="assets/snacks.png" alt="snacks" height="100" />
+          <h4>Snacks</h4>
+        </div>
+        <div class="eachcategory" onclick="showdinner()">
+          <img src="assets/dinner.png" alt="dinner" height="100" />
+          <h4>Dinner</h4>
+        </div>
+      </main>
+    </section>
+    <section class="showItems">
+      <main id="itemList" class="itemList"></main>
+    </section>
+    <script type="text/javascript">
+      //     $(document).ready(function () {
+      //     showbreakfast();
+      //   });
+
+      function showbreakfast() {
+        $.getJSON("breakfast.json", function (data) {
+          var eachcard = $("#itemList");
+          eachcard.empty();
+          $.each(data, function (index, value) {
+            console.log(value);
+            eachcard.append(
+              "<div class='eachitemdata'><div class='foodImg'><img src=" +
+                value.imgUrl +
+                " height='100' width='100' class='eachimg'></div><div class='foodDesc'><div class='eachitemhead'><h3>" +
+                value.FoodName +
+                "</h3><p class='eachprice'><b>" +
+                value.Price +
+                "$</b></p></div><p>" +
+                value.desc +
+                "</p></div></div></div>"
+            );
+            console.log("Showing Breakfast");
+          });
+        });
+      }
+
+      function showlunch() {
+        $.getJSON("lunch.json", function (data) {
+          var eachlunchcard = $("#itemList");
+          eachlunchcard.empty();
+          $.each(data, function (index, value) {
+            console.log(value);
+            eachlunchcard.append(
+              "<div class='eachitemdata'><div class='foodImg'><img src=" +
+                value.imgUrl +
+                " height='100' width='100' class='eachimg'></div><div class='foodDesc'><div class='eachitemhead'><h3>" +
+                value.FoodName +
+                "</h3><p class='eachprice'><b>" +
+                value.Price +
+                "$</b></p></div><p>" +
+                value.desc +
+                "</p></div></div></div>"
+            );
+            console.log("Showing Lunch");
+          });
+        });
+        console.log("showlunch");
+      }
+
+      function showdinner() {
+        $.getJSON("dinner.json", function (data) {
+          var eachdinnercard = $("#itemList");
+          eachdinnercard.empty();
+          $.each(data, function (index, value) {
+            console.log(value);
+            eachdinnercard.append(
+              "<div class='eachitemdata'><div class='foodImg'><img src=" +
+                value.imgUrl +
+                " height='100' width='100' class='eachimg'></div><div class='foodDesc'><div class='eachitemhead'><h3>" +
+                value.FoodName +
+                "</h3><p class='eachprice'><b>" +
+                value.Price +
+                "$</b></p></div><p>" +
+                value.desc +
+                "</p></div></div></div>"
+            );
+            console.log("Showing Dinner");
+          });
+        });
+        console.log("showdinner");
+      }
+
+      function showsnacks() {
+        $.getJSON("snacks.json", function (data) {
+          var eachsnackcard = $("#itemList");
+          eachsnackcard.empty();
+          $.each(data, function (index, value) {
+            console.log(value);
+            eachsnackcard.append(
+              "<div class='eachitemdata'><div class='foodImg'><img src=" +
+                value.imgUrl +
+                " height='100' width='100' class='eachimg'></div><div class='foodDesc'><div class='eachitemhead'><h3>" +
+                value.FoodName +
+                "</h3><p class='eachprice'><b>" +
+                value.Price +
+                "$</b></p></div><p>" +
+                value.desc +
+                "</p></div></div></div>"
+            );
+            console.log("Showing Snacks");
+          });
+        });
+        console.log("showsnacks");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #222;
+}
+
+.menuHead {
+  text-align: center;
+  margin: 20px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eachcategory {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+  color: white;
+  text-align: center;
+  width: fit-content;
+  background-color: #222;
+}
+
+.eachcategory:hover {
+  color: #ffee10;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+.itemList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 10px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.eachitemdata {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 10px;
+  width: 400px;
+  border: 2px solid black;
+}
+
+.eachitemdata:hover{
+    transform: scale(1.2);
+    border: 2px solid #ffee10;
+    cursor: pointer;
+    box-shadow: 0 0 5px #ffee10;
+}
+
+.foodDesc {
+  display: block;
+}
+
+.eachprice {
+  margin-right: 10px;
+}
+
+.eachitemhead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.eachimg {
+  margin: 10px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 615px) {
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    justify-items: center;
+  }
+}
